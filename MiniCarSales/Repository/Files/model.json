@@ -1,0 +1,108 @@
+﻿[
+  {
+    "ModelId": 1,
+    "MakeId": 1,
+    "ModelName": "Corolla"
+  },
+  {
+    "ModelId": 2,
+    "MakeId": 1,
+    "ModelName": "Camry"
+  },
+  {
+    "ModelId": 3,
+    "MakeId": 1,
+    "ModelName": "Landcruiser"
+  },
+  {
+    "ModelId": 4,
+    "MakeId": 1,
+    "ModelName": "Prius"
+  },
+  {
+    "ModelId": 5,
+    "MakeId": 1,
+    "ModelName": "Tarago"
+  },
+  {
+    "ModelId": 6,
+    "MakeId": 2,
+    "ModelName": "Falcon"
+  },
+  {
+    "ModelId": 7,
+    "MakeId": 2,
+    "ModelName": "Fiesta"
+  },
+  {
+    "ModelId": 8,
+    "MakeId": 2,
+    "ModelName": "Focus"
+  },
+  {
+    "ModelId": 9,
+    "MakeId": 2,
+    "ModelName": "Prius"
+  },
+  {
+    "ModelId": 10,
+    "MakeId": 3,
+    "ModelName": "Civic"
+  },
+
+  {
+    "ModelId": 11,
+    "MakeId": 3,
+    "ModelName": "Jazz"
+  },
+  {
+    "ModelId": 12,
+    "MakeId": 3,
+    "ModelName": "Odyseey"
+  },
+  {
+    "ModelId": 13,
+    "MakeId": 3,
+    "ModelName": "CR-V"
+  },
+  {
+    "ModelId": 14,
+    "MakeId": 4,
+    "ModelName": "420d"
+  },
+  {
+    "ModelId": 15,
+    "MakeId": 4,
+    "ModelName": "420i"
+  },
+  {
+    "ModelId": 16,
+    "MakeId": 4,
+    "ModelName": "428i"
+  },
+  {
+    "ModelId": 17,
+    "MakeId": 4,
+    "ModelName": "435i"
+  },
+  {
+    "ModelId": 18,
+    "MakeId": 5,
+    "ModelName": "Maxima"
+  },
+  {
+    "ModelId": 19,
+    "MakeId": 5,
+    "ModelName": "Navara"
+  },
+  {
+    "ModelId": 20,
+    "MakeId": 5,
+    "ModelName": "Pathfinder"
+  },
+  {
+    "ModelId": 21,
+    "MakeId": 5,
+    "ModelName": "Pulsar"
+  }
+]

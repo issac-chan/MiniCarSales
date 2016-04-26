@@ -1,0 +1,82 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-heading clearfix">
+                    <i class="icon-calendar"></i>
+                    <h3 class="panel-title">{{vm.title}} vehicle</h3>
+                </div>
+
+                <div class="panel-body">
+                    <form class="form-horizontal row-border" novalidate name="editForm" ng-submit="SaveFile()">
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Year</label>
+                            <div class="col-md-10">
+                                <select class="form-control" name="yearId" data-ng-model="vm.vehicle.yearId"
+                                        data-ng-options="year.yearId as year.yearName for year in vm.years">
+                                    <option></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Make</label>
+                            <div class="col-md-10">
+                                <select class="form-control" name="makeId" data-ng-model="vm.vehicle.makeId"
+                                        data-ng-options="make.makeId as make.makeName for make in vm.makes"
+                                        data-ng-change="vm.loadModels()">
+                                    <option></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Models</label>
+                            <div class="col-md-10">
+                                <select class="form-control" id="sel2"
+                                        name="modelId" data-ng-model="vm.vehicle.modelId"
+                                        data-ng-options="model.modelId as model.modelName for model in vm.models"></select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Price</label>
+                            <div class="col-md-10">
+                                <input name="price" class="form-control" type="number" ng-model="vm.vehicle.price">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Photo</label>
+                            <div class="col-md-7">
+                                <input type="file" name="file" accept="image/*" onchange="angular.element(this).scope().selectFileforUpload(this.files)" required />
+                            </div>
+                            <div class="col-md-3">
+                                <img src="{{vm.vehicle.photo}}" alt="photo"  class="img-responsive" ng-show="vm.vehicleId > 0 && vm.customer.photo != null" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Email</label>
+                            <div class="col-md-10">
+                                <input name="email" class="form-control" type="email" data-ng-model="vm.vehicle.contactEmail">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">ABN</label>
+                            <div class="col-md-10">
+                                <input name="abn" value="" class="form-control" type="text" data-ng-model="vm.vehicle.abn">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Description</label>
+                            <div class="col-md-10">
+                                <textarea name="description" class="form-control" cols="3" data-ng-model="vm.vehicle.description"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-default pull-right" style="margin-left:10px;" ng-click="vm.saveVehicle()">Save</button>
+                            <button type="button" class="btn btn-danger pull-right" ng-click="vm.cancel()">Back</button>                            
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

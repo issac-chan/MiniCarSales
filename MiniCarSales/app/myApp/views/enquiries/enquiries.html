@@ -1,0 +1,24 @@
+﻿<div class="container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Vehicle</th>
+                <th colspan="5">Comment</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-ng-repeat="enquiry in vm.enquiries">
+                <td>{{$index}}</td>
+                <td>{{enquiry.name}}</td>
+                <td>{{enquiry.email}}</td>
+                <td>{{enquiry.phone}}</td>
+                <td>{{enquiry.vehicleName}}</td>
+                <td>{{enquiry.comment}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

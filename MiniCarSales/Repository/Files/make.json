@@ -1,0 +1,22 @@
+﻿[
+  {
+    "MakeId": 1,
+    "MakeName": "Toyota"
+  },
+  {
+    "MakeId": 2,
+    "MakeName": "Ford"
+  },
+  {
+    "MakeId": 3,
+    "MakeName": "Honda"
+  },
+  {
+    "MakeId": 4,
+    "MakeName": "BMW"
+  },
+  {
+    "MakeId": 5,
+    "MakeName": "Nissan"
+  }
+]

@@ -1,0 +1,108 @@
+﻿<div class="container">
+    <div class="jumbotron">
+        <div class="col-md-1">
+            <label for="sel1">Make:</label>
+        </div>
+        <div class="col-md-4">
+            <select class="form-control" name="makeId" data-ng-model="vm.makeId" 
+                    data-ng-options="make.makeId as make.makeName for make in vm.makes"
+                    data-ng-change="vm.loadModels()">
+                <option></option>
+            </select>
+        </div>
+        <div class="col-md-1">
+            <label for="sel2">Model:</label>
+        </div>
+        <div class="col-md-4">
+            <select class="form-control" id="sel2"
+                    name="modelId" data-ng-model="vm.modelId" 
+                    data-ng-options="model.modelId as model.modelName for model in vm.models"></select>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-default" ng-click="vm.searchVehicle()">Search</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row show-hide-animation" data-ng-hide="vm.filteredVehicles.length == 0">
+            <div class="col-md-12" data-ng-class="vm.cardAnimationClass" data-ng-repeat="vehicle in vm.filteredVehicles">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{vehicle.yearName}} {{vehicle.makeName}} {{vehicle.modelName}}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <img ng-src="{{vehicle.photo}}" alt="photo" class="img-responsive"/>
+                            </div>
+                            <div class="col-md-4">
+                                <p><b>Price: </b> ${{vehicle.price}}<br /></p>
+                                <p><b>Year: </b> {{vehicle.yearName}}<br /></p>
+                                <p><b>Make: </b> {{vehicle.makeName}}<br /></p>
+                                <p><b>Model: </b> {{vehicle.modelName}}<br /></p>
+                                <p><b>Contact: </b> {{vehicle.contactName}}<br /></p>
+                                <p><b>Phone: </b> {{vehicle.phone}}<br /></p>
+                                <p><b>Email: </b> {{vehicle.contactEmail}}<br /></p>
+                                <p><b>Date: </b> {{vehicle.whenCreated}}<br /></p>                                
+                            </div>
+                            <!--<div class="col-md-1">
+                                <button type="button" class="btn btn-default">View</button>
+                                <button type="button" class="btn btn-default">Enquiry</button><br />                                    
+                            </div>-->
+                            <div class="col-md-3" style="margin-top:-15px;">
+                                <form name="enquiryForm" ng-hide="vm.enquiryResult[vehicle.vehicleId] == true">
+                                    <h4>Enquiry</h4>
+                                    <div class="form-group">                                        
+                                        <input type="text" class="form-control" name="EnquiryName" placeholder="Name" required ng-model="vm.enquiryName[vehicle.vehicleId]"  />
+                                        <span class="errorMessage" ng-show="enquiryForm.EnquiryName.$touched && enquiryForm.EnquiryName.$invalid">
+                                            Name is required
+                                        </span>
+                                    </div>
+                                    <div class="form-group">                                        
+                                        <input type="email" class="form-control" name="EnquiryEmail" placeholder="Email" ng-model="vm.enquiryEmail[vehicle.vehicleId]"  />
+                                        <span class="errorMessage" ng-show="enquiryForm.EnquiryEmail.$touched && enquiryForm.EnquiryEmail.$invalid">
+                                            Email is required
+                                        </span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="EnquiryPhone" placeholder="Phone" ng-model="vm.enquiryPhone[vehicle.vehicleId]" />
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea rows="3" class="form-control" name="EnquiryComment" placeholder="Comment" required ng-model="vm.enquiryComment[vehicle.vehicleId]"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-default" name="submit" ng-click="vm.submitEnquiry(vehicle.vehicleId)">Submit</button>
+                                    </div>
+                                    
+                                </form>
+                                <div ng-show="vm.enquiryResult[vehicle.vehicleId]">
+                                    <span>Thank you for submitting enquiry!</span>
+                                </div>
+                            </div>                            
+                        </div>  
+                        <div>{{vehicle.description}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row show-hide-animation" data-ng-show="vm.filteredVehicles.length == 0">
+            <div class="col-span-12">
+                <h4>No vehicles found</h4>
+            </div>
+        </div>
+    </div>
+    <div class="row show-hide-animation" data-ng-show="vm.Vehicles.length > 0">
+        <div class="col-md-12">
+            <div data-pagination
+                    data-on-select-page="vm.pageChanged(page)"
+                    data-total-items="vm.totalRecords"
+                    data-page="vm.currentPage"
+                    data-items-per-page="vm.pageSize"
+                    data-boundary-links="true"
+                    class="pagination-sm"></div>
+            <h5>Showing {{ vm.filteredCount }} of {{ vm.totalRecords}} total vehicles</h5>
+        </div>
+    </div>
+</div>
